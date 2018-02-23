@@ -28,11 +28,11 @@ import static org.eclipse.kapua.gateway.client.Transport.waitForConnection;
 public class KapuaConnectDemoActivity extends AppCompatActivity {
     private static final Logger logger = LoggerFactory.getLogger(KapuaConnectDemoActivity.class);
     public static final String android_client="Micromax A106";
-    public static final String HOST= "tcp://192.168.1.200";
-    public static final String port="1883";
-    public static final String account_name="kapua-sys";
-    public static final String username=    "kapua-broker";
-    public static final String password="kapua-password";
+    public static final String HOST= "tcp://<server_ip>";
+    public static final String port="<port>";
+    public static final String account_name="<account_name>";
+    public static final String username=    "<username>";
+    public static final String password="password";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,10 +51,10 @@ public class KapuaConnectDemoActivity extends AppCompatActivity {
     public  void Connect() throws Exception {
         try {
             final Client client = KuraMqttProfile.newProfile(FuseClient.Builder::new)
-                    .accountName("kapua-sys")
+                    .accountName("<account_name>")
                     .clientId(android_client)
-                    .brokerUrl("tcp://192.168.1.200:1883")
-                    .credentials(userAndPassword("kapua-broker", "kapua-password"))
+                    .brokerUrl("tcp://server_ip_port>")
+                    .credentials(userAndPassword("username", "password"))
                     .build();
 
             Application.Builder builder = client.buildApplication("location");
