@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TcpConnectDemo</string>
+    <string name="title_activity_kapua_connect">KApuaConnectActivity</string>
+</resources>
